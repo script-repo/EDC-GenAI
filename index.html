@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
         canvas {
             border: 1px solid cyan;
@@ -20,13 +21,16 @@
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <canvas id="gameCanvas"></canvas>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
 
-        let carPosition = 200;
+        canvas.width = window.innerWidth;
+        canvas.height = 600;
+
+        let carPosition = canvas.width / 2;
         let roadOffset = 0;
         let speed = 5;
         let score = 0;
@@ -42,15 +46,20 @@
                 let y = ((i * 40 + roadOffset) % 600) - 40;
                 let width = 100 + i * 15;
                 ctx.beginPath();
-                ctx.moveTo(200 - width / 2, y);
-                ctx.lineTo(200 + width / 2, y);
+                ctx.moveTo(canvas.width / 2 - width / 2, y);
+                ctx.lineTo(canvas.width / 2 + width / 2, y);
                 ctx.stroke();
             }
         }
 
         function drawCar() {
             ctx.fillStyle = 'cyan';
-            ctx.fillRect(carPosition - 20, 500, 40, 60);
+            ctx.fillRect(carPosition - 30, 500, 60, 30); // Car body
+            ctx.fillStyle = 'darkcyan';
+            ctx.fillRect(carPosition - 20, 480, 40, 20); // Car roof
+            ctx.fillStyle = 'black';
+            ctx.fillRect(carPosition - 25, 510, 10, 10); // Left wheel
+            ctx.fillRect(carPosition + 15, 510, 10, 10); // Right wheel
         }
 
         function updateGame() {
@@ -74,11 +83,16 @@
         }
 
         document.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowLeft' && carPosition > 100) {
+            if (event.key === 'ArrowLeft' && carPosition > 30) {
                 carPosition -= 10;
-            } else if (event.key === 'ArrowRight' && carPosition < 300) {
+            } else if (event.key === 'ArrowRight' && carPosition < canvas.width - 30) {
                 carPosition += 10;
             }
+        });
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            carPosition = canvas.width / 2;
         });
 
         gameLoop();
