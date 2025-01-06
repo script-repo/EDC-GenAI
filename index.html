@@ -3,99 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Driver</title>
+    <title>EDC GenAI Workflows</title>
     <style>
         body {
+            background-color: #000000;
+            color: #00ffff;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
         }
-        canvas {
-            border: 1px solid cyan;
+
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #00ffff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content-box {
+            border: 2px solid #00ffff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 2px solid #00ffff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #00ffff;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
+    <header>
+        <h1>EDC GenAI Workflows</h1>
+        <p>Everyday Carry workflows for getting things done efficiently and effectively.</p>
+    </header>
 
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#repo">GitHub Repo</a>
+    </nav>
 
-        canvas.width = window.innerWidth;
-        canvas.height = 600;
+    <main>
+        <section id="about" class="content-box">
+            <h2>About</h2>
+            <p>This project focuses on Everyday Carry (EDC) workflows designed to enhance productivity. These workflows are practical and utilitarian, helping users achieve their goals with straightforward solutions. No fancy frills—just tools that work.</p>
+        </section>
 
-        let carPosition = canvas.width / 2;
-        let roadOffset = 0;
-        let speed = 5;
-        let score = 0;
+        <section id="features" class="content-box">
+            <h2>Features</h2>
+            <ul>
+                <li>Streamlined workflows for daily tasks</li>
+                <li>Utilitarian design for maximum efficiency</li>
+                <li>Powered by GenAI for intelligent assistance</li>
+            </ul>
 
-        function drawRoad() {
-            ctx.fillStyle = 'black';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            <table>
+                <thead>
+                    <tr>
+                        <th>Workflow</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Task Automation</td>
+                        <td>Automate repetitive tasks to save time and effort.</td>
+                    </tr>
+                    <tr>
+                        <td>Data Processing</td>
+                        <td>Quickly analyze and process data with AI support.</td>
+                    </tr>
+                    <tr>
+                        <td>Communication Tools</td>
+                        <td>Streamline communication with AI-generated templates.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-            ctx.strokeStyle = 'cyan';
-            ctx.lineWidth = 2;
+        <section id="repo" class="content-box">
+            <h2>GitHub Repository</h2>
+            <p>Explore the source code and contribute to the project on GitHub:</p>
+            <p><a href="https://github.com/username/edc-genai-workflows" target="_blank">EDC GenAI Workflows Repository</a></p>
+        </section>
+    </main>
 
-            for (let i = 0; i < 20; i++) {
-                let y = ((i * 40 + roadOffset) % 600) - 40;
-                let width = 100 + i * 15;
-                ctx.beginPath();
-                ctx.moveTo(canvas.width / 2 - width / 2, y);
-                ctx.lineTo(canvas.width / 2 + width / 2, y);
-                ctx.stroke();
-            }
-        }
-
-        function drawCar() {
-            ctx.fillStyle = 'cyan';
-            ctx.fillRect(carPosition - 30, 500, 60, 30); // Car body
-            ctx.fillStyle = 'darkcyan';
-            ctx.fillRect(carPosition - 20, 480, 40, 20); // Car roof
-            ctx.fillStyle = 'black';
-            ctx.fillRect(carPosition - 25, 510, 10, 10); // Left wheel
-            ctx.fillRect(carPosition + 15, 510, 10, 10); // Right wheel
-        }
-
-        function updateGame() {
-            roadOffset += speed;
-            if (roadOffset > 40) {
-                roadOffset = 0;
-                score++;
-            }
-        }
-
-        function gameLoop() {
-            updateGame();
-            drawRoad();
-            drawCar();
-
-            ctx.fillStyle = 'cyan';
-            ctx.font = '20px Arial';
-            ctx.fillText(`Score: ${score}`, 10, 30);
-
-            requestAnimationFrame(gameLoop);
-        }
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowLeft' && carPosition > 30) {
-                carPosition -= 10;
-            } else if (event.key === 'ArrowRight' && carPosition < canvas.width - 30) {
-                carPosition += 10;
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            carPosition = canvas.width / 2;
-        });
-
-        gameLoop();
-    </script>
+    <footer>
+        <p>&copy; 2025 EDC GenAI Workflows. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
