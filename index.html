@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Driver</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        canvas {
+            border: 1px solid cyan;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let carPosition = 200;
+        let roadOffset = 0;
+        let speed = 5;
+        let score = 0;
+
+        function drawRoad() {
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = 'cyan';
+            ctx.lineWidth = 2;
+
+            for (let i = 0; i < 20; i++) {
+                let y = ((i * 40 + roadOffset) % 600) - 40;
+                let width = 100 + i * 15;
+                ctx.beginPath();
+                ctx.moveTo(200 - width / 2, y);
+                ctx.lineTo(200 + width / 2, y);
+                ctx.stroke();
+            }
+        }
+
+        function drawCar() {
+            ctx.fillStyle = 'cyan';
+            ctx.fillRect(carPosition - 20, 500, 40, 60);
+        }
+
+        function updateGame() {
+            roadOffset += speed;
+            if (roadOffset > 40) {
+                roadOffset = 0;
+                score++;
+            }
+        }
+
+        function gameLoop() {
+            updateGame();
+            drawRoad();
+            drawCar();
+
+            ctx.fillStyle = 'cyan';
+            ctx.font = '20px Arial';
+            ctx.fillText(`Score: ${score}`, 10, 30);
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft' && carPosition > 100) {
+                carPosition -= 10;
+            } else if (event.key === 'ArrowRight' && carPosition < 300) {
+                carPosition += 10;
+            }
+        });
+
+        gameLoop();
+    </script>
+</body>
+</html>
