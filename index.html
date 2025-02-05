@@ -1,136 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDC GenAI Workflows</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #00ffff;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            background-image: url('bg-robot.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;            
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            border-bottom: 2px solid #00ffff;
-        }
-
-        h1 {
-            font-size: 2.5em;
-        }
-
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        a, a:link, a:visited, a:hover, a:active {
-            color: #00ff00 !important; /* Force green for all states */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #000000;
-            border-radius: 8px;
-        }
-
-        .content-box {
-            border: 2px solid #00ffff;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 2px solid #00ffff;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            white-space: nowrap;
-        }
-
-        td {
-            word-wrap: break-word;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            border-top: 2px solid #00ffff;
-            margin-top: 20px;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>EDC GenAI Workflows</title>
+ <style>
+ body {
+ background-color: #000000;
+ color: #00ffff;
+ font-family: 'Courier New', Courier, monospace;
+ margin: 0;
+ padding: 0;
+ background-image: url('bg-robot.png');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center; 
+ }
+ header {
+ text-align: center;
+ padding: 20px;
+ border-bottom: 2px solid #00ffff;
+ }
+ h1 {
+ font-size: 2.5em;
+ }
+ nav {
+ text-align: center;
+ margin: 20px 0;
+ }
+ a, a:link, a:visited, a:hover, a:active {
+ color: #00ff00 !important; /* Force green for all states */
+ text-decoration: none;
+ }
+ a:hover {
+ text-decoration: underline;
+ }
+ main {
+ max-width: 800px;
+ margin: 0 auto;
+ padding: 20px;
+ background-color: #000000;
+ border-radius: 8px;
+ }
+ .content-box {
+ border: 2px solid #00ffff;
+ padding: 20px;
+ margin-bottom: 20px;
+ }
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 20px;
+ }
+ table, th, td {
+ border: 2px solid #00ffff;
+ }
+ th, td {
+ padding: 10px;
+ text-align: left;
+ }
+ th {
+ white-space: nowrap;
+ }
+ td {
+ word-wrap: break-word;
+ }
+ footer {
+ text-align: center;
+ padding: 10px;
+ border-top: 2px solid #00ffff;
+ margin-top: 20px;
+ }
+ </style>
 </head>
 <body>
-    <header>
-        <h1>EDC GenAI Workflows</h1>
-        <p>Everyday Carry workflows for getting things done efficiently and effectively.</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="https://github.com/script-repo/EDC-GenAI">GitHub Repo</a>
-    </nav>
-
-    <main>
-        <section id="about" class="content-box">
-            <h2>About</h2>
-            <p>This project focuses on Everyday Carry (EDC) workflows designed to enhance productivity. These workflows are practical and utilitarian, helping users achieve their goals with straightforward solutions. No fancy frills—just tools that work.</p>
-        </section>
-
-        <section id="features" class="content-box">
-            <h2>Features</h2>
-            <ul>
-                <li>Streamlined workflows for daily tasks</li>
-                <li>Utilitarian design for maximum efficiency</li>
-                <li>Powered by GenAI for intelligent assistance</li>
-            </ul>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Workflow</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="https://github.com/script-repo/EDC-GenAI/tree/main/workshop/WF-1">Workflow-1: Automating OBS Recordings with Calendar Integration, Transcription, and Insight Extraction</a></td>
-                        <td>This workflow automates the process of managing `.mkv` files generated by OBS, combining PowerShell scripts to rename files based on Outlook Calendar events, organize them, convert them to `.mp3`, and transcribe the audio to text using Whisper CLI. It then extracts actionable insights from the transcriptions with Fabric's `extract_wisdom` pattern. This end-to-end automation ensures your recordings are named, structured, and processed, allowing you to easily organize, transcribe, and derive valuable insights from your audio files.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-    </main>
-    <footer>
-        <p>Copy and share</p>
-    </footer>
+ <header>
+ <h1>EDC GenAI Workflows</h1>
+ <p>Everyday Carry workflows for getting things done efficiently and effectively.</p>
+ </header>
+ <nav>
+ <a href="#about">About</a>
+ <a href="#features">Features</a>
+ <a href="https://github.com/script-repo/EDC-GenAI">GitHub Repo</a>
+ </nav>
+ <main>
+ <section id="about" class="content-box">
+ <h2>About</h2>
+ <p>This project focuses on Everyday Carry (EDC) workflows designed to enhance productivity. These workflows are practical and utilitarian, helping users achieve their goals with straightforward solutions. No fancy frills—just tools that work.</p>
+ </section>
+ <section id="features" class="content-box">
+ <h2>Features</h2>
+ <ul>
+ <li>Streamlined workflows for daily tasks</li>
+ <li>Utilitarian design for maximum efficiency</li>
+ <li>Powered by GenAI for intelligent assistance</li>
+ </ul>
+ <table>
+ <thead>
+ <tr>
+ <th>Workflow</th>
+ <th>Description</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><a href="https://github.com/script-repo/EDC-GenAI/tree/main/workshop/WF-1">Workflow-1: Automating OBS Recordings with Calendar Integration, Transcription, and Insight Extraction</a></td>
+ <td>This workflow automates the process of managing `.mkv` files generated by OBS, combining PowerShell scripts to rename files based on Outlook Calendar events, organize them, convert them to `.mp3`, and transcribe the audio to text using Whisper CLI. It then extracts actionable insights from the transcriptions with Fabric's `extract_wisdom` pattern. This end-to-end automation ensures your recordings are named, structured, and processed, allowing you to easily organize, transcribe, and derive valuable insights from your audio files.</td>
+ </tr>
+ <tr>
+ <td>Workflow-2: Client research. Install base, usage, strategic initiatives, and opportunities.</td>
+ <td>This agentic workflow is designed for thorough client research, focusing on key business elements like the install base, usage patterns, strategic initiatives, and emerging opportunities. It allows users to leverage multiple data sources to gather insights about client needs, market positioning, and opportunities for growth, providing actionable intelligence for strategic decision-making.</td>
+ </tr>
+ <tr>
+ <td>Workflow-3: Code generation for supporting daily tasks</td>
+ <td>This workflow focuses on generating code to support daily tasks. For example, it can automate the creation of a website by generating HTML, CSS, and JavaScript code based on user specifications, streamlining the development process and ensuring consistency and efficiency.</td>
+ </tr>
+ <tr>
+ <td>Workflow-4: Agentic Research</td>
+ <td>This workflow leverages agentic capabilities to conduct in-depth research, gathering and analyzing data from various sources to provide comprehensive insights and actionable recommendations.</td>
+ </tr>
+ <tr>
+ <td>Workflow-5: GenAI application Rapid Prototyping</td>
+ <td>This workflow enables rapid prototyping of GenAI applications, allowing developers to quickly create and test new ideas, iterate on designs, and refine functionality based on user feedback.</td>
+ </tr>
+ <tr>
+ <td>Workflow-6: GenAI Prompt Library</td>
+ <td>This workflow provides a library of pre-built prompts for various GenAI applications, helping users quickly find and implement the right prompts for their specific needs and use cases.</td>
+ </tr>
+ <tr>
+ <td>Workflow-7: GenAI Analysis of Technical Solutions</td>
+ <td>This workflow uses GenAI to analyze technical solutions, evaluating their effectiveness, identifying potential improvements, and providing recommendations for optimization.</td>
+ </tr>
+ <tr>
+ <td>Workflow-8: GenAI Enabled Document Generation</td>
+ <td>This workflow automates the generation of documents using GenAI, creating well-structured, accurate, and professional documents based on user inputs and specifications.</td>
+ </tr>
+ <tr>
+ <td>Workflow-9: SE GPT and Glean</td>
+ <td>This workflow integrates SE GPT and Glean to provide advanced search and knowledge management capabilities, helping users find and organize information more efficiently.</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+ </main>
+ <footer>
+ <p>Copy and share</p>
+ </footer>
 </body>
 </html>
