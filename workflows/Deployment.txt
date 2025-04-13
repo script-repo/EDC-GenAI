@@ -1,0 +1,22 @@
+Deployment
+- in both
+
+Firewall
+-separate circuits
+20MB circuit
+- limited in bw
+- latency is 30/40 ms
+
+mgmt. cluster on new net
+- 
+
+IP changes
+- published information
+- architecture best practices
+- robo
+- scale out 
+
+- network config review
+- deployment assistance
+
+- 
