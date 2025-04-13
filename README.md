@@ -2,6 +2,8 @@
 
 Everyday Carry workflows for getting things done efficiently and effectively.
 
+HTML Page view: https://script-repo.github.io/EDC-GenAI/
+
 ## About
 
 This project focuses on Everyday Carry (EDC) workflows designed to enhance productivity. These workflows are practical and utilitarian, helping users achieve their goals with straightforward solutions. No fancy frills—just tools that work.
